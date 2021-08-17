@@ -318,3 +318,13 @@ func BIP44PathOption(bIP44Path string) Option {
 		return nil
 	}
 }
+
+func BSNProjectInfoOption(info BSNProjectInfo) Option {
+	return func(cfg *ClientConfig) error {
+		cfg.BSNProject.ProjectId = info.ProjectId
+		cfg.BSNProject.ProjectKey = info.ProjectKey
+		cfg.BSNProject.ChainAccountAddress = info.ChainAccountAddress
+		return nil
+	}
+
+}
