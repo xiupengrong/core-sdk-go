@@ -75,6 +75,15 @@ type ClientConfig struct {
 
 	// BIP44 path
 	BIP44Path string
+
+	// BSN ProjectId ProjectKey ChainAccountAddress
+	BSNProject BSNProjectInfo
+}
+
+type BSNProjectInfo struct {
+	ProjectId           string
+	ProjectKey          string
+	ChainAccountAddress string
 }
 
 func NewClientConfig(uri, grpcAddr, chainID string, options ...Option) (ClientConfig, error) {

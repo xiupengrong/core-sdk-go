@@ -70,7 +70,7 @@ func NewBaseClient(cfg sdktypes.ClientConfig, encodingConfig sdktypes.EncodingCo
 	c := commoncache.NewCache(cacheCapacity, cfg.Cached)
 	base.AccountQuery = AccountQuery{
 		Queries:    base,
-		GRPCClient: NewGRPCClient(cfg.GRPCAddr),
+		GRPCClient: NewGRPCClient(cfg.GRPCAddr, cfg.BSNProject),
 		Logger:     logger,
 		Cache:      c,
 		cdc:        encodingConfig.Marshaler,
