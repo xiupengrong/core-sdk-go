@@ -35,7 +35,7 @@ func (t *Token) GetRequestMetadata(ctx context.Context, uri ...string) (map[stri
 
 // RequireTransportSecurity 是否需要基于 TLS 认证进行安全传输
 func (t *Token) RequireTransportSecurity() bool {
-	return true
+	return false
 }
 
 func NewGRPCClient(url string, info types.BSNProjectInfo) types.GRPCClient {

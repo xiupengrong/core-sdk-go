@@ -160,6 +160,9 @@ func (cfg *ClientConfig) checkAndSetDefault() error {
 	if err := BIP44PathOption(cfg.BIP44Path)(cfg); err != nil {
 		return err
 	}
+	if err := BSNProjectInfoOption(cfg.BSNProject)(cfg); err != nil {
+		return err
+	}
 	return GasAdjustmentOption(cfg.GasAdjustment)(cfg)
 }
 
